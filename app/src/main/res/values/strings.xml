@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Medium No Thanks</string>
+    <string name="error_no_link">No link received</string>
+</resources>
