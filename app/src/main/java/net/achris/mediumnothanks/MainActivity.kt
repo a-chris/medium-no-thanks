@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import net.achris.mediumnothanks.data.MEDIUM_BASE_LINK
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

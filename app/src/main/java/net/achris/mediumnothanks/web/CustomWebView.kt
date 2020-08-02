@@ -77,7 +77,12 @@ class CustomWebView @JvmOverloads constructor(
     }
 
     override fun loadUrl(url: String?) {
-        onLoadingStarted?.invoke()
+        if (url?.startsWith("javascript") == false) {
+            /*
+                Not triggered while executing javascript code
+             */
+            onLoadingStarted?.invoke()
+        }
         super.loadUrl(url)
     }
 }
