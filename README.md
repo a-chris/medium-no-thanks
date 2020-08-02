@@ -8,7 +8,7 @@ Medium No Thanks is an Android application to help bypass Medium paywall on your
 
 ## How it works
 
-Just select **Medium No Thanks** from the Android sharesheet.
+Find an article with paywall, click to share the article and select **Medium No Thanks** form the sharesheet
 
 <p align="center">
   <img src="https://github.com/a-chris/medium-no-thanks/blob/master/readme/sample.gif" />
