@@ -85,3 +85,5 @@ lint/tmp/
 # lint/reports/
 
 .idea/
+app/build/
+app/release/
