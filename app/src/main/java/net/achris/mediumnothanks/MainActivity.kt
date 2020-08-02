@@ -18,8 +18,15 @@ class MainActivity : AppCompatActivity() {
 
         val receivedLink = intent.getStringExtra(Intent.EXTRA_TEXT)
         if (receivedLink == null) {
+            welcome_title.visibility = View.VISIBLE
+            instructions_title.visibility = View.VISIBLE
+            instructions_container.visibility = View.VISIBLE
             Toast.makeText(this, getString(R.string.error_no_link), Toast.LENGTH_LONG).show()
         } else {
+            welcome_title.visibility = View.GONE
+            instructions_title.visibility = View.GONE
+            instructions_container.visibility = View.GONE
+            webview.visibility = View.VISIBLE
             val articleTitle = receivedLink.substringBefore(MEDIUM_BASE_LINK).trimEnd()
             val mediumUrl = MEDIUM_BASE_LINK + receivedLink.substringAfterLast(MEDIUM_BASE_LINK)
             Toast.makeText(this, articleTitle, Toast.LENGTH_LONG).show()
