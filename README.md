@@ -17,7 +17,3 @@ Find an article with paywall, click to share the article and select **Medium No 
 ## Under the hood
 
 Medium No Thanks takes advantage of Android WebView component to render the Medium page without redirecting you to the Medium application with the paywall.
-
-<p align="right">
-<img src="https://hitcounter.pythonanywhere.com/nocount/tag.svg?url=https://github.com/a-chris/medium-no-thanks" alt="Hits">
-</p>
