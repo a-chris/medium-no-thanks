@@ -17,22 +17,41 @@ class MainActivity : AppCompatActivity() {
         webview.onLoadingStarted = { progress.visibility = View.VISIBLE }
         webview.onLoadingFinished = { progress.visibility = View.GONE }
 
-        val receivedLink = intent.getStringExtra(Intent.EXTRA_TEXT)
-        if (receivedLink == null) {
-            welcome_title.visibility = View.VISIBLE
-            instructions_title.visibility = View.VISIBLE
-            instructions_container.visibility = View.VISIBLE
+        val rawLink = intent.getStringExtra(Intent.EXTRA_TEXT)
+        if (rawLink == null) {
+            setInstructionsVisibility(View.VISIBLE)
+            webview.visibility = View.GONE
             Toast.makeText(this, getString(R.string.error_no_link), Toast.LENGTH_LONG).show()
         } else {
-            welcome_title.visibility = View.GONE
-            instructions_title.visibility = View.GONE
-            instructions_container.visibility = View.GONE
+            setInstructionsVisibility(View.GONE)
             webview.visibility = View.VISIBLE
-            val articleTitle = receivedLink.substringBefore(MEDIUM_BASE_LINK).trimEnd()
-            val mediumUrl = MEDIUM_BASE_LINK + receivedLink.substringAfterLast(MEDIUM_BASE_LINK)
-            Toast.makeText(this, articleTitle, Toast.LENGTH_LONG).show()
-            webview.loadUrl(mediumUrl)
+            getMediumTitle(rawLink)?.let {
+                Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+            }
+            webview.loadUrl(getMediumLink(rawLink))
         }
+    }
+
+    private fun getMediumLink(rawLink: String): String {
+        return if (rawLink.contains(MEDIUM_BASE_LINK)) {
+            MEDIUM_BASE_LINK + rawLink.substringAfterLast(MEDIUM_BASE_LINK)
+        } else {
+            rawLink
+        }
+    }
+
+    private fun getMediumTitle(rawLink: String): String? {
+        return if (rawLink.contains(MEDIUM_BASE_LINK)) {
+            rawLink.substringBefore(MEDIUM_BASE_LINK).trimEnd()
+        } else {
+            null
+        }
+    }
+
+    private fun setInstructionsVisibility(visibility: Int) {
+        welcome_title.visibility = visibility
+        instructions_title.visibility = visibility
+        instructions_container.visibility = visibility
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
