@@ -6,4 +6,6 @@
     <string name="step_one">1. Find an article with paywall using the Medium application</string>
     <string name="step_two">2. Click to share it</string>
     <string name="step_three">3. Select Medium No Thanks from the sharesheet</string>
+    <string name="step_four">4. Leave a star to the project</string>
+    <string name="on_github">on GitHub</string>
 </resources>
