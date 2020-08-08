@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="?android:attr/colorBackground">
 
         <include layout="@layout/toolbar" />
 
@@ -31,7 +32,7 @@
                 android:fontFamily="monospace"
                 android:padding="10dp"
                 android:text="@string/step_one"
-                android:textColor="@color/black"
+                android:textColor="?colorOnPrimary"
                 android:textStyle="bold" />
 
             <TextView
@@ -40,7 +41,7 @@
                 android:fontFamily="monospace"
                 android:padding="10dp"
                 android:text="@string/step_two"
-                android:textColor="@color/black"
+                android:textColor="?colorOnPrimary"
                 android:textStyle="bold" />
 
             <TextView
@@ -49,7 +50,7 @@
                 android:fontFamily="monospace"
                 android:padding="10dp"
                 android:text="@string/step_three"
-                android:textColor="@color/black"
+                android:textColor="?colorOnPrimary"
                 android:textStyle="bold" />
 
             <TextView
@@ -58,7 +59,7 @@
                 android:fontFamily="monospace"
                 android:padding="10dp"
                 android:text="@string/step_four"
-                android:textColor="@color/black"
+                android:textColor="?colorOnPrimary"
                 android:textStyle="bold" />
 
             <TextView
@@ -73,7 +74,7 @@
                 android:paddingEnd="50dp"
                 android:text="@string/on_github"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="?colorOnPrimary"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/github_small" />
         </LinearLayout>
@@ -84,7 +85,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
             android:text="@string/title"
-            android:textColor="@color/black"
+            android:textColor="?colorOnPrimary"
             android:textSize="24sp"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/instructions_container"
@@ -99,7 +100,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="monospace"
             android:text="@string/instructions"
-            android:textColor="@color/black"
+            android:textColor="?colorOnPrimary"
             android:textSize="18sp"
             android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/instructions_container"

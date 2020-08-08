@@ -1,18 +1,24 @@
-package net.achris.mediumnothanks.ui.webview
+package net.achris.mediumnothanks.ui.web
 
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import kotlinx.android.synthetic.main.fragment_webview.*
 import kotlinx.android.synthetic.main.fragment_webview.view.*
 import net.achris.mediumnothanks.R
-import net.achris.mediumnothanks.data.MEDIUM_BASE_LINK
+import net.achris.mediumnothanks.model.ColorMode
+import net.achris.mediumnothanks.ui.FragmentWithToolbar
+import net.achris.mediumnothanks.util.MEDIUM_BASE_LINK
 
 const val SHARED_URL = "shared_url"
 
-class WebViewFragment : Fragment() {
+class WebViewFragment : FragmentWithToolbar() {
 
     private var sharedUrl: String? = null
 
@@ -33,6 +39,13 @@ class WebViewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupToolbar(refreshAppOnThemeChange = false)
+        viewModel.getActivityState().observe(viewLifecycleOwner, Observer {
+            applyColorMode(it.colorMode)
+        })
+        viewModel.getActivityState().value?.colorMode?.let {
+            applyColorMode(it)
+        }
         with(view) {
             webview.onLoadingStarted = { progress_container.visibility = View.VISIBLE }
             webview.onLoadingFinished = { progress_container.visibility = View.GONE }
@@ -44,6 +57,19 @@ class WebViewFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun applyColorMode(cm: ColorMode) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            webview.settings.forceDark =
+                if (cm == ColorMode.DARK)
+                    WebSettings.FORCE_DARK_ON
+                else
+                    WebSettings.FORCE_DARK_OFF
+        }
+        if (cm == ColorMode.DARK) {
+            webview.setBackgroundColor(Color.BLACK)
+        }
     }
 
     private fun getMediumLink(rawLink: String): String {
