@@ -52,9 +52,7 @@ class CustomWebView @JvmOverloads constructor(
 
             override fun onPageCommitVisible(view: WebView?, url: String?) {
                 super.onPageCommitVisible(view, url)
-                if (url?.startsWith(MEDIUM_BASE_PAGE_URL) == true) {
-                    onLoadingFinished?.invoke()
-                }
+                onLoadingFinished?.invoke()
             }
         }
 
