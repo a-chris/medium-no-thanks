@@ -29,8 +29,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:padding="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:text="@string/step_one"
                 android:textColor="?colorOnPrimary"
                 android:textStyle="bold" />
@@ -38,8 +38,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:padding="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:text="@string/step_two"
                 android:textColor="?colorOnPrimary"
                 android:textStyle="bold" />
@@ -47,8 +47,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:padding="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:text="@string/step_three"
                 android:textColor="?colorOnPrimary"
                 android:textStyle="bold" />
@@ -56,8 +56,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:padding="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:text="@string/step_four"
                 android:textColor="?colorOnPrimary"
                 android:textStyle="bold" />
@@ -68,7 +68,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:drawablePadding="10dp"
-                android:fontFamily="monospace"
                 android:gravity="center"
                 android:padding="10dp"
                 android:paddingEnd="50dp"
@@ -83,7 +82,6 @@
             android:id="@+id/welcome_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
             android:text="@string/title"
             android:textColor="?colorOnPrimary"
             android:textSize="24sp"
@@ -98,7 +96,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:fontFamily="monospace"
             android:text="@string/instructions"
             android:textColor="?colorOnPrimary"
             android:textSize="18sp"
@@ -111,7 +108,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
-            android:fontFamily="monospace"
             android:text="@string/version_string"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView2"
