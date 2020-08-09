@@ -8,4 +8,5 @@
     <string name="step_three">3. Select Medium No Thanks from the sharesheet</string>
     <string name="step_four">4. Leave a star to the project</string>
     <string name="on_github">on GitHub</string>
+    <string name="version_string">v</string>
 </resources>
