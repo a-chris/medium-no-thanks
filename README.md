@@ -14,6 +14,18 @@ Find an article with paywall, click to share the article and select **Medium No 
   <img src="https://github.com/a-chris/medium-no-thanks/blob/master/readme/sample.gif" />
 </p>
 
+## Extra features
+[x] Dark mode friendly (only for Android 10 and greater)
+[] Detecting the availability of a new release
+[] Keeping a list of read posts
+
+## What you can't do using this app
+* You won't be able to clap or comment a post
+
 ## Under the hood
 
-Medium No Thanks takes advantage of Android WebView component to render the Medium page without redirecting you to the Medium application with the paywall.
+Medium No Thanks takes advantage of the Android WebView to render Medium pages without redirecting you to the Medium application with the paywall.
+
+## Features request and bugs report
+To request a new feature or report a bug feel free to open an issue.
+
