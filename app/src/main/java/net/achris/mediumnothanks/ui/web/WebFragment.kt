@@ -43,7 +43,7 @@ class WebViewFragment : FragmentWithToolbar() {
         viewModel.getActivityState().observe(viewLifecycleOwner, Observer {
             applyColorMode(it.colorMode)
         })
-        viewModel.getActivityState().value?.colorMode?.let {
+        viewModel.currentColorModel?.let {
             applyColorMode(it)
         }
         with(view) {

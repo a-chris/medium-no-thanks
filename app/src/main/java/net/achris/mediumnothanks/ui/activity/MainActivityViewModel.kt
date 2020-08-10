@@ -15,6 +15,9 @@ class ActivityViewModel(private val store: Store) : ViewModel() {
 
     private val activityState = MutableLiveData<ActivityState>()
 
+    val currentColorModel: ColorMode?
+        get() = activityState.value?.colorMode
+
     fun getActivityState(): LiveData<ActivityState> = activityState
 
     fun setInitialColorMode(applyAppTheme: Boolean) {
