@@ -17,8 +17,8 @@ Find an article with paywall, click to share the article and select **Medium No 
 ## Extra features
 
 - [x] Dark mode friendly (only for Android 10 and greater)
-- [] Detecting the availability of a new release
-- [] Keeping a list of read posts
+- [ ] Detecting the availability of a new release
+- [ ] Keeping a list of read posts
 
 ## What you can't do using this app
 * You won't be able to clap or comment any post
