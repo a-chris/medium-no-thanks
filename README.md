@@ -4,7 +4,7 @@
 
 <h1 align="center">Medium No Thanks</h1>
 
-Medium No Thanks is an Android application to help bypass Medium paywall on your smartphone without effort.
+Medium No Thanks is an Android application to help bypass Medium paywall on your Android device without effort.
 
 ## How it works
 
