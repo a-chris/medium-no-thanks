@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Medium No Thanks</string>
     <string name="error_no_link">No link received</string>
+    <string name="error_empty_history">Empty articles history..</string>
     <string name="title">You are ready to go!</string>
     <string name="instructions">Follow these steps:</string>
     <string name="step_one">1. Find an article with paywall using the Medium application</string>
@@ -9,4 +10,6 @@
     <string name="step_four">4. Leave a star to the project</string>
     <string name="on_github">on GitHub</string>
     <string name="version_string">v</string>
+    <string name="star_on_github">Leave a star</string>
+    <string name="read_date">Last read on</string>
 </resources>

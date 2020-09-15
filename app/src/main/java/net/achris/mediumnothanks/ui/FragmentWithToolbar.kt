@@ -1,24 +1,22 @@
 package net.achris.mediumnothanks.ui
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import androidx.core.animation.doOnEnd
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import net.achris.mediumnothanks.R
-import net.achris.mediumnothanks.extensions.animateFlipY
 import net.achris.mediumnothanks.extensions.flipIn
+import net.achris.mediumnothanks.extensions.flipOut
 import net.achris.mediumnothanks.extensions.playAnimation
 import net.achris.mediumnothanks.model.ColorMode
-import net.achris.mediumnothanks.ui.activity.ActivityViewModel
-import net.achris.mediumnothanks.util.GITHUB_PROJECT
+import net.achris.mediumnothanks.ui.activity.ThemeViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 open class FragmentWithToolbar : Fragment() {
 
-    protected val viewModel: ActivityViewModel by sharedViewModel()
+    protected val themeViewModel: ThemeViewModel by sharedViewModel()
 
     private val colorModeMenuItem by lazy {
         requireView().findViewById<View>(R.id.action_color_mode)
@@ -29,7 +27,7 @@ open class FragmentWithToolbar : Fragment() {
         /*
             To be applied after the color mode change
          */
-        if (viewModel.currentColorModel == ColorMode.DARK) {
+        if (themeViewModel.currentColorModel == ColorMode.DARK) {
             colorModeMenuItem.flipIn()
         }
     }
@@ -40,26 +38,23 @@ open class FragmentWithToolbar : Fragment() {
     protected fun setupToolbar(refreshAppOnThemeChange: Boolean) {
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.action_color_mode ->
-                    colorModeMenuItem.animateFlipY()
-                        .playAnimation()
-                        .doOnEnd {
-                            toggleTheme(refreshAppOnThemeChange)
-                        }
-                R.id.action_github -> openGitHub()
+                R.id.action_color_mode -> {
+                    toggleTheme(refreshAppOnThemeChange)
+                    colorModeMenuItem.flipOut()
+                }
+                R.id.action_drawer -> openDrawer()
             }
             true
         }
     }
 
-    protected fun openGitHub() {
-        val openBrowserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(GITHUB_PROJECT))
-        startActivity(openBrowserIntent)
+    private fun openDrawer() {
+        activity?.drawer_layout?.openDrawer(GravityCompat.END)
     }
 
     private fun toggleTheme(refreshApp: Boolean) {
-        viewModel.toggleColorMode()
-        if (refreshApp) viewModel.applyAppTheme()
+        themeViewModel.toggleColorMode()
+        if (refreshApp) themeViewModel.applyAppTheme()
     }
 
 }

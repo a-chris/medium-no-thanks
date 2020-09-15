@@ -9,4 +9,6 @@
     <color name="black_almost_light">#1F1F1F</color>
     <color name="black_almost">#121212</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray_light">#EDEDED</color>
+    <color name="gray_lighter">#F5F5F5</color>
 </resources>

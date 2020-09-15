@@ -14,12 +14,14 @@ import kotlinx.android.synthetic.main.fragment_webview.view.*
 import net.achris.mediumnothanks.R
 import net.achris.mediumnothanks.model.ColorMode
 import net.achris.mediumnothanks.ui.FragmentWithToolbar
+import net.achris.mediumnothanks.ui.activity.ArticlesViewModel
 import net.achris.mediumnothanks.util.MEDIUM_BASE_LINK
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 const val SHARED_URL = "shared_url"
 
 class WebViewFragment : FragmentWithToolbar() {
-
+    private val articlesViewModel: ArticlesViewModel by sharedViewModel()
     private var sharedUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,23 +42,24 @@ class WebViewFragment : FragmentWithToolbar() {
         super.onViewCreated(view, savedInstanceState)
 
         setupToolbar(refreshAppOnThemeChange = false)
-        viewModel.getActivityState().observe(viewLifecycleOwner, Observer {
+        themeViewModel.themeLiveData.observe(viewLifecycleOwner, Observer {
             applyColorMode(it.colorMode)
         })
-        viewModel.currentColorModel?.let {
+        themeViewModel.currentColorModel?.let {
             applyColorMode(it)
         }
+
+        articlesViewModel.currentArticleLiveData.observe(viewLifecycleOwner, Observer {
+            webview.loadUrl(it.url)
+            Toast.makeText(context, it.title, Toast.LENGTH_LONG).show()
+        })
         with(view) {
             webview.onLoadingStarted = { progress_container.visibility = View.VISIBLE }
             webview.onLoadingFinished = { progress_container.visibility = View.GONE }
-            sharedUrl?.let { url ->
-                webview.loadUrl(getMediumLink(url))
-                getMediumTitle(url)?.let {
-                    Toast.makeText(context, it, Toast.LENGTH_LONG).show()
-                }
-            }
         }
-
+        sharedUrl?.let { url ->
+            articlesViewModel.rawUrlReceived(url)
+        }
     }
 
     private fun applyColorMode(cm: ColorMode) {
@@ -72,23 +75,11 @@ class WebViewFragment : FragmentWithToolbar() {
         }
     }
 
-    private fun getMediumLink(rawLink: String): String {
-        return if (rawLink.contains(MEDIUM_BASE_LINK)) {
-            MEDIUM_BASE_LINK + rawLink.substringAfterLast(MEDIUM_BASE_LINK)
-        } else {
-            rawLink
-        }
-    }
-
-    private fun getMediumTitle(rawLink: String): String? {
-        return if (rawLink.contains(MEDIUM_BASE_LINK)) {
-            rawLink.substringBefore(MEDIUM_BASE_LINK).trimEnd()
-        } else {
-            null
-        }
-    }
-
     companion object {
+        val TAG = WebViewFragment::class.java.name
+        @JvmStatic
+        fun newInstance() = WebViewFragment()
+
         @JvmStatic
         fun newInstance(sharedUrl: String) =
             WebViewFragment().apply {

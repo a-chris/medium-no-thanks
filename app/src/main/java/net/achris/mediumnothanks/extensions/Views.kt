@@ -16,3 +16,11 @@ fun View.flipIn() {
 fun View.flipOut() {
     scaleX = FLIP_OUT
 }
+
+fun View.gone() {
+    visibility = View.GONE
+}
+
+fun View.visible() {
+    visibility = View.VISIBLE
+}

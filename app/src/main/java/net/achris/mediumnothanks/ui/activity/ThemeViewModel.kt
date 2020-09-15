@@ -7,18 +7,18 @@ import androidx.lifecycle.ViewModel
 import net.achris.mediumnothanks.model.ColorMode
 import net.achris.mediumnothanks.store.Store
 
-data class ActivityState(
+data class ThemeState(
     val colorMode: ColorMode
 )
 
-class ActivityViewModel(private val store: Store) : ViewModel() {
+class ThemeViewModel(private val store: Store) : ViewModel() {
 
-    private val activityState = MutableLiveData<ActivityState>()
+    private val _themeLiveData = MutableLiveData<ThemeState>()
+    val themeLiveData:LiveData<ThemeState>
+        get() = _themeLiveData
 
     val currentColorModel: ColorMode?
-        get() = activityState.value?.colorMode
-
-    fun getActivityState(): LiveData<ActivityState> = activityState
+        get() = _themeLiveData.value?.colorMode
 
     fun setInitialColorMode(applyAppTheme: Boolean) {
         setColorMode(store.loadColorMode())
@@ -26,20 +26,20 @@ class ActivityViewModel(private val store: Store) : ViewModel() {
     }
 
     fun toggleColorMode(): ColorMode? =
-        activityState.value?.colorMode?.let {
+        _themeLiveData.value?.colorMode?.let {
             val newColorMode = switchColorMode(it)
             setColorMode(newColorMode)
             newColorMode
         }
 
     fun applyAppTheme() {
-        activityState.value?.colorMode?.let {
+        _themeLiveData.value?.colorMode?.let {
             AppCompatDelegate.setDefaultNightMode(colorModeToAppTheme(it))
         }
     }
 
     private fun setColorMode(cm: ColorMode) {
-        activityState.value = ActivityState(colorMode = cm)
+        _themeLiveData.value = ThemeState(colorMode = cm)
         store.saveColorMode(cm)
     }
 
