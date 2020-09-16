@@ -17,8 +17,8 @@ Find an article with paywall, click to share the article and select **Medium No 
 ## Extra features
 
 - [x] Dark mode friendly (only for Android 10 and greater)
-- [ ] Detecting the availability of a new release
-- [ ] Keeping a list of read posts
+* [x] Keeping a list of read posts
+* [ ] Detecting the availability of a new release
 
 ## What you can't do using this app
 * You won't be able to clap or comment any post
@@ -29,4 +29,5 @@ Medium No Thanks takes advantage of the Android WebView to render Medium pages w
 
 ## Features request and bugs report
 To request a new feature or report a bug feel free to open an issue.
+
 

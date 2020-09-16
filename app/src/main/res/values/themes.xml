@@ -3,9 +3,9 @@
     <style name="Theme.MediumNoThanks" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:forceDarkAllowed" tools:targetApi="Q">true</item>
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black_almost_light</item>
-        <item name="colorPrimaryDark">@color/black_almost_light</item>
-        <item name="colorPrimaryVariant">@color/black_almost</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorPrimaryVariant">@color/black_almost_light</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
