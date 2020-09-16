@@ -30,16 +30,17 @@ class ArticlesViewModel(private val store: Store, private val router: Router) : 
     }
 
     fun readArticle(article: Article) {
-        _currentArticleLiveData.value = article
+        val updatedArticle = article.copy(date = Date())
+        _currentArticleLiveData.value = updatedArticle
         /*
             If this article has been already read then move it on top of the history
          */
         _readArticlesLiveData.value = _readArticlesLiveData.value?.toMutableList()?.apply {
-            val sameArticleAlreadyStoredIndex = indexOfFirst { it.title == article.title }
+            val sameArticleAlreadyStoredIndex = indexOfFirst { it.title == updatedArticle.title }
             if (sameArticleAlreadyStoredIndex != -1) {
                 removeAt(sameArticleAlreadyStoredIndex)
             }
-            add(0, article)
+            add(0, updatedArticle)
         } ?: listOf(article)
         store.saveReadArticles(_readArticlesLiveData.value!!)
         router.showArticle()
