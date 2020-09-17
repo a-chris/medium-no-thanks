@@ -6,9 +6,13 @@
 
 Medium No Thanks is an Android application to help bypass Medium paywall on your Android device without effort.
 
+<p align="center">
+  <img src="https://github.com/a-chris/medium-no-thanks/blob/master/readme/preview.png" />
+</p>
+
 ## How it works
 
-Find an article with paywall, click to share the article and select **Medium No Thanks** from the sharesheet
+Find an article with paywall, click to share the article and select **Medium No Thanks** from the sharesheet.
 
 <p align="center">
   <img src="https://github.com/a-chris/medium-no-thanks/blob/master/readme/sample.gif" />
@@ -16,11 +20,12 @@ Find an article with paywall, click to share the article and select **Medium No 
 
 ## Extra features
 
-- [x] Dark mode friendly (only for Android 10 and greater)
+* [x] Dark mode friendly (only for Android 10 and greater)
 * [x] Keeping a list of read posts
-* [ ] Detecting the availability of a new release
+* [ ] Notify when a new release is available
 
 ## What you can't do using this app
+
 * You won't be able to clap or comment any post
 
 ## Under the hood
