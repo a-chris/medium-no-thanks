@@ -4,11 +4,16 @@
 
 <h1 align="center">Medium No Thanks</h1>
 
-Medium No Thanks is an Android application to help bypass Medium paywall on your Android device without effort.
+Medium No Thanks is an small Android application that allows you to read any Medium article bypassing the paywall. Under the hood it is just using an Android WebView to render the Medium page.
 
 <p align="center">
   <img src="https://github.com/a-chris/medium-no-thanks/blob/master/readme/preview.png" />
 </p>
+
+## How to install
+
+Download the latest apk from the GitHub releases and install it.
+[click here to download the latest version](https://github.com/a-chris/medium-no-thanks/releases/download/1.2.1/mnt_1.2.1.apk)
 
 ## How it works
 
@@ -26,13 +31,10 @@ Find an article with paywall, click to share the article and select **Medium No 
 
 ## What you can't do using this app
 
-* You won't be able to clap or comment any post
-
-## Under the hood
-
-Medium No Thanks takes advantage of the Android WebView to render Medium pages without redirecting you to the Medium application with the paywall.
+* You won't be able to clap or comment any post, you can only read the article.
 
 ## Features request and bugs report
+
 To request a new feature or report a bug feel free to open an issue.
 
 
