@@ -13,7 +13,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 29
         versionCode rootProject.file('app/build_number.txt').text.trim().toInteger()
-        versionName "1.2.1"
+        versionName "1.3.0"
 
         resValue("string", "version", "${versionName} (${versionCode})")
     }
