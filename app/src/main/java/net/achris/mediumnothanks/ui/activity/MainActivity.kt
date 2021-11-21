@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.setInitialColorMode(applyAppTheme = true)
 
-        val rawLink = intent?.getStringExtra(Intent.EXTRA_TEXT)
+        val rawLink = intent?.getStringExtra(Intent.EXTRA_TEXT) ?: intent?.dataString
         if (rawLink != null)
             router.showArticle(rawLink)
         else
