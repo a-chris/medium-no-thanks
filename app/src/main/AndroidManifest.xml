@@ -37,10 +37,8 @@
                 <data android:scheme="http" />
                 <data android:host="medium.com" />
                 <data android:host="towardsdatascience.com" />
-                <data android:host="uxdesign.cc" />
                 <data android:host="betterprogramming.pub" />
                 <data android:host="plainenglish.io" />
-                <data android:host="uxplanet.org" />
             </intent-filter>
 
             <intent-filter android:autoVerify="true">
@@ -53,10 +51,8 @@
 
                 <data android:host="medium.com" />
                 <data android:host="towardsdatascience.com" />
-                <data android:host="uxdesign.cc" />
                 <data android:host="betterprogramming.pub" />
                 <data android:host="plainenglish.io" />
-                <data android:host="uxplanet.org" />
 
             </intent-filter>
         </activity>
