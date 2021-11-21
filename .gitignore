@@ -90,3 +90,5 @@ app/release/
 
 # custom
 readme/original/
+*.jks
+
