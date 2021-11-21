@@ -51,7 +51,6 @@ class WebViewFragment : FragmentWithToolbar() {
 
         articlesViewModel.currentArticleLiveData.observe(viewLifecycleOwner, Observer {
             webview.loadUrl(it.url)
-            Toast.makeText(context, it.title, Toast.LENGTH_LONG).show()
         })
         with(view) {
             webview.onLoadingStarted = { progress_container.visibility = View.VISIBLE }

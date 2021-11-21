@@ -24,7 +24,7 @@ class ArticlesViewModel(private val store: Store, private val router: Router) : 
     }
 
     fun rawUrlReceived(rawUrl: String) {
-        val title = rawUrl.substringBefore(MEDIUM_BASE_LINK).trimEnd()
+        val title = rawUrl.split('/').last().substringAfterLast("%2F").substringBeforeLast('-')
         val url = MEDIUM_BASE_LINK + rawUrl.substringAfterLast(MEDIUM_BASE_LINK)
         readArticle(Article(title, Date(), url))
     }
@@ -45,5 +45,4 @@ class ArticlesViewModel(private val store: Store, private val router: Router) : 
         store.saveReadArticles(_readArticlesLiveData.value!!)
         router.showArticle()
     }
-
 }
