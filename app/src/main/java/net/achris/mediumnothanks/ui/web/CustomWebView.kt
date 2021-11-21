@@ -35,7 +35,9 @@ class CustomWebView @JvmOverloads constructor(
                 /*
                     Avoids redirecting to the browser or the Medium app
                  */
-                loadUrl(url)
+                if (url != null) {
+                    loadUrl(url)
+                }
                 return false
             }
 
@@ -59,8 +61,8 @@ class CustomWebView @JvmOverloads constructor(
         CookieManager.getInstance().setAcceptCookie(false)
     }
 
-    override fun loadUrl(url: String?) {
-        if (url?.startsWith("javascript") == false) {
+    override fun loadUrl(url: String) {
+        if (!url.startsWith("javascript")) {
             /*
                 Not triggered while executing javascript code
              */

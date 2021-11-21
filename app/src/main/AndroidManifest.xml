@@ -15,7 +15,8 @@
         android:theme="@style/Theme.MediumNoThanks">
         <activity
             android:name="net.achris.mediumnothanks.ui.activity.MainActivity"
-            android:maxRecents="1">
+            android:maxRecents="1"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
