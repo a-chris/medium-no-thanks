@@ -36,6 +36,9 @@
 
                 <data android:scheme="http" />
                 <data android:host="medium.com" />
+                <data android:host="towardsdatascience.com" />
+                <data android:host="betterprogramming.pub" />
+                <data android:host="plainenglish.io" />
             </intent-filter>
 
             <intent-filter android:autoVerify="true">
@@ -47,6 +50,10 @@
                 <data android:scheme="https" />
 
                 <data android:host="medium.com" />
+                <data android:host="towardsdatascience.com" />
+                <data android:host="betterprogramming.pub" />
+                <data android:host="plainenglish.io" />
+
             </intent-filter>
         </activity>
         <meta-data
