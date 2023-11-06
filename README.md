@@ -1,3 +1,9 @@
+```diff
+- Sadly, in 2023 Medium fixed the paywall by-pass trick that this apps and many others were using.
+- Since I'm not an Android developer anymore and I've almost stopped reading Medium, I'm not able to mantain this app.
++ Thanks for your support and your stars, I really appreciated it ❤️
+```
+
 <p align="center">
   <img src="https://github.com/a-chris/medium-no-thanks/blob/master/readme/logo.png" width="75" height="75"/>
 </p>
